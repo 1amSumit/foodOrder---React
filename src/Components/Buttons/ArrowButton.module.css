@@ -1,0 +1,15 @@
+.btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn:hover,
+.btn:active {
+  opacity: 60%;
+}
