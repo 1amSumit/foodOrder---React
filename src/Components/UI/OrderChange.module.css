@@ -1,11 +1,30 @@
 .orderChangeContaine {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 13px;
+  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+  padding: 6px 9px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
 }
 
 .decBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
 }
 .amount {
+  display: inline;
 }
 .incBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
 }
