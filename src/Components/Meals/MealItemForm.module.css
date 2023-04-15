@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.addToCartBtn {
+  background: transparent;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}

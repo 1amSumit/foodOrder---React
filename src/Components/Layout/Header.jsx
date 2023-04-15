@@ -5,11 +5,15 @@ const Header = (props) => {
   return (
     <>
       <header className={classes.header}>
-        <h1>Swiggy</h1>
+        <div className={classes.headerLogo}>
+          <h1>Omifood</h1>
+        </div>
         <div className={classes.buttonContainer}>
           <HeaderButton title="cart" />
           <HeaderButton title="sign in" />
         </div>
+
+        <h1 className={classes.headingPrimary}>Order your favourite food!</h1>
       </header>
     </>
   );

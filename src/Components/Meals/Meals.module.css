@@ -1,0 +1,22 @@
+.sectionContent {
+  display: flex;
+  overflow-x: scroll;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.sectionContent::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+}
