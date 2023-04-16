@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Header.module.css";
 import HeaderButton from "./HeaderButton";
 const Header = (props) => {
@@ -9,7 +9,7 @@ const Header = (props) => {
           <h1>Omifood</h1>
         </div>
         <div className={classes.buttonContainer}>
-          <HeaderButton title="cart" />
+          <HeaderButton onClick={props.onShowCart} title="cart" />
           <HeaderButton title="sign in" />
         </div>
 

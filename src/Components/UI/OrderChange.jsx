@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import classes from "./OrderChange.module.css";
 
 const OrderChange = (props) => {
-  const [amount, setAmount] = useState(1);
+  const amountRef = useRef();
+  const [count, setCount] = useState(1);
 
   const decClickHandler = (e) => {
+    const enteredAmount = amountRef.current.value;
+    const amountNumber = +enteredAmount;
     e.preventDefault();
-    setAmount(amount - 1);
-    props.getAmount(amount - 1);
+    setCount(count - 1);
+    props.getClickedvalue(count);
+    props.getAmount(amountNumber);
   };
 
   const incClickHandler = (e) => {
+    const enteredAmount = amountRef.current.value;
+    const amountNumber = +enteredAmount;
     e.preventDefault();
-    setAmount(amount + 1);
-    props.getAmount(amount + 1);
+    props.getAmount(amountNumber + 1);
+    setCount(count + 1);
   };
 
   return (
@@ -21,7 +27,8 @@ const OrderChange = (props) => {
       <button onClick={decClickHandler} className={classes.decBtn}>
         -
       </button>
-      <p className={classes.amount}>{amount}</p>
+      <input ref={amountRef} className={classes.amount} type="number" />
+      <p className={classes.amountShow}>{count}</p>
       <button onClick={incClickHandler} className={classes.incBtn}>
         +
       </button>
