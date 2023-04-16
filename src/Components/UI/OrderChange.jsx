@@ -1,7 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import classes from "./OrderChange.module.css";
+import CartContext from "../../store/cart-context";
 
 const OrderChange = (props) => {
+  const cartCtx = useContext(CartContext);
   const amountRef = useRef();
   const [count, setCount] = useState(1);
 

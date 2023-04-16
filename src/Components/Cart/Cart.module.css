@@ -6,6 +6,10 @@
   overflow: auto;
 }
 
+.cart-items::-webkit-scrollbar {
+  display: none;
+}
+
 .total {
   display: flex;
   justify-content: space-between;
