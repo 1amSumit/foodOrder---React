@@ -7,10 +7,10 @@ const MealItemForm = (props) => {
   const [amount, setAmount] = useState(1);
 
   //getting amount from order change Component
-  const getAmount = (amount) => {
-    setAmount(amount);
-    props.addToCart(amount);
-  };
+  // const getAmount = (amount) => {
+  //   setAmount(amount);
+  //   props.addToCart(amount);
+  // };
 
   //  sending amount to MealList Component onSubmit handler
   const onClickHandler = (e) => {
@@ -19,15 +19,19 @@ const MealItemForm = (props) => {
     props.addToCart(amount);
   };
 
-  const getClick = (count) => {
-    count <= 1 ? setIsClicked(false) : console.log("hello");
-  };
+  // const getClick = (count) => {
+  //   count <= 1 ? setIsClicked(false) : console.log("hello");
+  // };
 
   return (
     <form className={classes.form}>
+      {/* {isClicked ? (
+        <OrderChange getAmount={getAmount} getClickedvalue={getClick} onAdd={} onRemove={} />
+      ) : ( */}
       <button onClick={onClickHandler} className={classes.addToCartBtn}>
-        Add
+        + Add
       </button>
+      {/* )} */}
     </form>
   );
 };

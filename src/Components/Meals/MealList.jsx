@@ -14,6 +14,11 @@ const MealList = (props) => {
       amount: amount,
     });
   };
+
+  const removeItem = () => {
+    cartCtx.removeItem(props.id);
+  };
+
   return (
     <div className={classes.list}>
       <div className={classes.imageConatiner}>
@@ -28,7 +33,7 @@ const MealList = (props) => {
           <span>$</span>
           {props.price}
         </p>
-        <MealItemForm addToCart={addToCart} />
+        <MealItemForm addToCart={addToCart} removeItem={removeItem} />
       </div>
     </div>
   );
