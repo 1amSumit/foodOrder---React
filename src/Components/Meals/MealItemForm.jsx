@@ -25,13 +25,9 @@ const MealItemForm = (props) => {
 
   return (
     <form className={classes.form}>
-      {isClicked ? (
-        <OrderChange getAmount={getAmount} getClickedvalue={getClick} />
-      ) : (
-        <button onClick={onClickHandler} className={classes.addToCartBtn}>
-          + Add
-        </button>
-      )}
+      <button onClick={onClickHandler} className={classes.addToCartBtn}>
+        Add
+      </button>
     </form>
   );
 };
