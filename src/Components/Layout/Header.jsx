@@ -5,9 +5,9 @@ const Header = (props) => {
   return (
     <>
       <header className={classes.header}>
-        <div className={classes.headerLogo}>
+        {/* <div className={classes.headerLogo}>
           <h1>Omifood</h1>
-        </div>
+        </div> */}
         <div className={classes.buttonContainer}>
           <HeaderButton onClick={props.onShowCart} title="cart" />
           <HeaderButton title="sign in" />
