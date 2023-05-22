@@ -3,6 +3,7 @@ import classes from "./Cart.module.css";
 import Model from "../UI/Model";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem/CartItem";
+import Checkout from "./checkOut";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -40,6 +41,7 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>${totalAmount}</span>
       </div>
+      <Checkout />
       <div className={classes.actions}>
         <button onClick={props.onHideCart} className={classes["button--alt"]}>
           Close
