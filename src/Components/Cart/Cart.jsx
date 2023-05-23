@@ -14,7 +14,6 @@ const Cart = (props) => {
   const hashItem = cartCtx.items.length > 0;
 
   const orderButtonClicked = (e) => {
-    e.preventDefault();
     setIsCheckout(true);
   };
 
@@ -40,6 +39,7 @@ const Cart = (props) => {
       ))}
     </ul>
   );
+
   return (
     <Model onHideCart={props.onHideCart}>
       {cartItems}
@@ -47,7 +47,7 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>${totalAmount}</span>
       </div>
-      {isCheckout && <Checkout />}
+      {isCheckout && <Checkout onCancel={props.onHideCart} />}
       {!isCheckout && (
         <div className={classes.actions}>
           <button onClick={props.onHideCart} className={classes["button--alt"]}>
