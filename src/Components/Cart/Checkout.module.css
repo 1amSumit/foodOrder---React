@@ -1,11 +1,16 @@
 .form {
   margin: 1rem 0;
-  height: 19rem;
-  overflow: auto;
+  height: 15rem;
+  overflow-y: auto;
 }
 
 .control {
   margin-bottom: 0.5rem;
+}
+
+.control p {
+  padding-top: 0.5rem;
+  font-weight: bold;
 }
 
 .control label {
