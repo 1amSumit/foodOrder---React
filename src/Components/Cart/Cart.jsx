@@ -1,16 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./Cart.module.css";
 import Model from "../UI/Model";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem/CartItem";
-import Checkout from "./checkOut";
+import Checkout from "./Checkout";
 
 const Cart = (props) => {
+  const [isFormClicked, setIsFormClicked] = useState(true);
+  const [orderClicked, setOrderClicked] = useState(false);
   const cartCtx = useContext(CartContext);
 
   const totalAmount = cartCtx.totalAmount.toFixed(2);
 
   const hashItem = cartCtx.items.length > 0;
+
+  const orderButtonClicked = (e) => {
+    e.preventDefault();
+    console.log("Order button Clicked");
+    setOrderClicked(true);
+    setIsFormClicked(false);
+  };
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
@@ -41,13 +50,19 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>${totalAmount}</span>
       </div>
-      <Checkout />
-      <div className={classes.actions}>
-        <button onClick={props.onHideCart} className={classes["button--alt"]}>
-          Close
-        </button>
-        {hashItem && <button className={classes.button}>Order</button>}
-      </div>
+      {orderClicked && <Checkout />}
+      {isFormClicked && (
+        <div className={classes.actions}>
+          <button onClick={props.onHideCart} className={classes["button--alt"]}>
+            Close
+          </button>
+          {hashItem && (
+            <button onClick={orderButtonClicked} className={classes.button}>
+              Order
+            </button>
+          )}
+        </div>
+      )}
     </Model>
   );
 };
