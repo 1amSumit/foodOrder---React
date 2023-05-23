@@ -6,8 +6,7 @@ import CartItem from "./CartItem/CartItem";
 import Checkout from "./Checkout";
 
 const Cart = (props) => {
-  const [isFormClicked, setIsFormClicked] = useState(true);
-  const [orderClicked, setOrderClicked] = useState(false);
+  const [isCheckout, setIsCheckout] = useState(false);
   const cartCtx = useContext(CartContext);
 
   const totalAmount = cartCtx.totalAmount.toFixed(2);
@@ -16,9 +15,7 @@ const Cart = (props) => {
 
   const orderButtonClicked = (e) => {
     e.preventDefault();
-    console.log("Order button Clicked");
-    setOrderClicked(true);
-    setIsFormClicked(false);
+    setIsCheckout(true);
   };
 
   const cartItemRemoveHandler = (id) => {
@@ -50,8 +47,8 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>${totalAmount}</span>
       </div>
-      {orderClicked && <Checkout />}
-      {isFormClicked && (
+      {isCheckout && <Checkout />}
+      {!isCheckout && (
         <div className={classes.actions}>
           <button onClick={props.onHideCart} className={classes["button--alt"]}>
             Close
